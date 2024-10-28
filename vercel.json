@@ -2,25 +2,9 @@
   "version": 2,
   "builds": [
     {
-      "src": "startAll.js",
+      "src": "api/startAll.js",
       "use": "@vercel/node"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/api/start"
-    }
-  ],
-  "functions": {
-    "api/start.js": {
-      "memory": 1024,
-      "maxDuration": 60
-    }
-  },
-  "env": {
-    "USUARIO": "felipe",
-    "PASSWORD": "154254693Feli",
-    "HOST": "aa6aebc1bcd64e19a125b232dfb27ad1.s1.eu.hivemq.cloud"
-  }
+  "routes": [{ "src": "/(.*)", "dest": "/api/startAll.js" }]
 }

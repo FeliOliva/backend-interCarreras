@@ -1,8 +1,8 @@
 const { spawn } = require("child_process");
+const path = require("path");
 
-// Función para ejecutar un script con 'node'
 function ejecutarScript(nombre, ruta) {
-    const proceso = spawn("node", [ruta]);
+    const proceso = spawn("node", [path.join(__dirname, ruta)]);
 
     proceso.stdout.on("data", (data) => {
         console.log(`[${nombre}]: ${data}`);
@@ -17,7 +17,6 @@ function ejecutarScript(nombre, ruta) {
     });
 }
 
-// Ejecutar cada publicador y suscriptor en paralelo
 ejecutarScript("pubLife", "states/pub/lifePub.js");
 ejecutarScript("necesidadesPub", "states/pub/necesidadesPub.js");
 ejecutarScript("happyPub", "states/pub/happyPub.js");
