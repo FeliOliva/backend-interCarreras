@@ -6,7 +6,18 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [{ "src": "/(.*)", "dest": "startAll.js" }],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/api/start"
+    }
+  ],
+  "functions": {
+    "api/start.js": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  },
   "env": {
     "USUARIO": "felipe",
     "PASSWORD": "154254693Feli",

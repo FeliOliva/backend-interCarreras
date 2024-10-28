@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node startAll.js",
-    "start": "node startAll.js"
+    "dev": "node api/startAll.js",
+    "start": "node api/startAll.js"
   },
   "keywords": [],
   "author": "",
